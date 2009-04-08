@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Module labels</description>
+		<type>module</type>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_labels_tablabel">Admin module for locked records</label>
+			<label index="mlang_labels_tabdescr">This module allows you to unlock locked records and get an overview which records are locked currently</label>
+			<label index="mlang_tabs_tab">Lock Admin</label>
+		</languageKey>
+	</data>
+</T3locallang>

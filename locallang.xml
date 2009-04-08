@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Language labels for the "lockadmin" extension</description>
+		<type>module</type>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="lockedRecord_pageBeingEdited">The page on which this record resides is locked</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="lockedRecord_pageBeingEdited">Die Seite auf welcher sich dieser Datensatz befindet ist gesperrt</label>
+		</languageKey>
+	</data>
+</T3locallang>
+

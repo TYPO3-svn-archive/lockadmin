@@ -1,0 +1,41 @@
+
+	# cat=basic; type=string; label=Locking Mode: Mode of record locking (either empty or keyword "single"/"extended"). Default is "advisory" which only shows a warning (as TYPO3 has been for years). Keyword "single" activates "hard"-locking (records cannot be edited by other users) and keyword "extended" even activates "hard"-locking of all records on the page which has [ctrl][extendedLocking] set (if the record to be locked also has this setting - otherwise it acts like "single")
+recordLockingMode = 
+
+	# cat=basic; type=boolean; label=Record Locking Explicit: Relevant only if "recordLockingMode" is set; If set, locking of records must be done manually (default is that TCEforms locks the record and clears the lock during exit)
+recordLockingExplicit = 0
+
+	# cat=basic; type=string; label=Lock page for tables: When on of the tables listed here gets edited, also the page they are found on gets locked. (Comma separated list)
+lockPageForTables = tt_content,pages_language_overlay
+
+	# cat=basic; type=string; label=Lock tables for page: When a page gets edited also the tables listed here get locked. (Comma separated list)
+lockTablesForPage = 
+
+	# cat=basic; type=boolean; label=Disable "Edit" when locked: When set no editing of locked records is possible.
+disableEditOnLock = 1
+
+	# cat=basic; type=boolean; label=Disable "Edit-Icons" when locked: When set no edit buttons and icons get shown for locked records.
+disableEditIconsOnLock = 1
+
+	# cat=basic; type=boolean; label=Disable "Edit" for content-locked pages: When set no editing of pages is possible which are locked because content on them is being edited
+disableEditOnLock_contentLocked = 1
+
+	# cat=basic; type=boolean; label=Disable "Edit-Icons" for content-locked pages: When set no edit buttons and icons get shown for pages which are locked because content on them is being edited.
+disableEditIconsOnLock_contentLocked = 1
+
+# cat=basic; type=boolean; label=Page-Content Edit-Warning: Show a warinng record on pages on which content elements or other records get edited
+pageContentEditWarning = 1
+
+	# cat=basic; type=boolean; label=Record locking across WS: Relevant only if "recordLockingMode" is set; If set, looking for locks will be done across all workspaces. By default it is done only in the current workspaces versions.
+recordLockingAcrossWS = 0
+
+	# cat=basic; type=integer; label=Message PID: The PID of a sys-folder to which sent IPM mesages get stored
+messagePid = 0
+
+	# cat=basic; type=string; label=Lock timeout: This number defines after how many minutes a record lock is assumed to be invalid. The lock will then simply get removed. If negative a locked record will only get unlocked when the user who locked the record closed it properly. Please do not confuse this with "explicitLocking" which allows you to manually lock/unlock a record
+recordLockTimeout = 7200
+
+	# cat=basic; type=string; label=Sleeper binary: Path to the binary/executable "sleeper" which acts as IPC for the php scripts
+sleeperBin =
+
+

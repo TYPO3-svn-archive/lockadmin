@@ -1,0 +1,45 @@
+<h1>Send messages</h1>
+<style type="text/css">
+table.view-locks	{
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+table.view-locks th,
+table.view-locks td	{
+	border: 1px solid black;
+	padding: 3px 10px 3px 10px;
+}
+label	{
+	width: 150px;
+}
+select	{
+	width: 200px;
+}
+textarea	{
+	width: 400px;
+	height: 100px;
+	border: 1px solid #555555;
+}
+</style>
+<form action="###CURRENT_URL###" target="_self" method="POST" enctype="multipart/form-data">
+	<!-- ###LIST__USERS### :::begin::: -->
+	<label for="recipient">Logged in Users:</label>
+	<select name="recipient" size="10">
+		<!-- ###ITEM__USERS### :::begin::: -->
+		<option value="###user_uid###">###user_username###</option>
+		<!-- ###ITEM__USERS### :::end::: -->
+	</select>	
+	<br />
+	<br />
+	<label for="message">Message:</label>
+	<textarea name="message"></textarea>
+	<br />
+	<br />
+	<label for="urgent">Urgent:</label>
+	<input type="checkbox" name="urgent" value="1" />
+	<br />
+	<br />
+	<input type="submit" name="submit" value="Send message" />
+	<!-- ###LIST__USERS### :::end::: -->
+</form>

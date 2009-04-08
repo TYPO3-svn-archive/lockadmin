@@ -1,0 +1,58 @@
+<h1>Remove Locks</h1>
+<!-- ###LIST__CURRENT_LOCKS### :::begin::: -->
+<style type="text/css">
+table.view-locks	{
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+table.view-locks th,
+table.view-locks td	{
+	border: 1px solid black;
+	padding: 3px 10px 3px 10px;
+}
+</style>
+<table cellspacing="0" cellpadding="0" border="0" class="view-locks">
+	<tr>
+		<th>
+			Remove lock
+		</th>
+		<th>
+			Owner
+		</th>
+		<th>
+			Date/Time
+		</th>
+		<th>
+			Table
+		</th>
+		<th>
+			Record
+		</th>
+	</tr>
+	<!-- ###ITEM__CURRENT_LOCKS### :::begin::: -->
+	<tr>
+		<td>
+			<a href="###LINK_removeLock###" onclick="return confirm('Do you really want to remove this lock ?');"><img src="../../../../typo3/gfx/deletedok.gif" alt="Remove Lock !" title="Remove Lock"/></a>
+		</td>
+		<td>
+			###be_user__username###
+		</td>
+		<td>
+			###tstamp_label### (###tstamp_age###)
+			<!-- ###LOCKITEM_expired### :::begin::: -->
+			<img src="../../../../typo3/gfx/recordlock_warning3.gif" alt="EXPIRED !" title="EXPIRED !"/>
+			<!-- ###LOCKITEM_expired### :::end::: -->
+		</td>
+		<td>
+			###record_table###
+		</td>
+		<td>
+			###record_uid### (###lockrec__TITLE__###)
+		</td>
+	</tr>
+	<!-- ###ITEM__CURRENT_LOCKS### :::end::: -->
+</table>
+<!-- ###LIST__CURRENT_LOCKS### :::end::: -->
+
+</table>

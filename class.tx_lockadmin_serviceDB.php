@@ -320,13 +320,15 @@ class tx_lockadmin_serviceDB extends t3lib_svbase	{
 					if (($table==='pages') && is_array($lockTablesForPage) && count($lockTablesForPage)) {
 						foreach ($lockTablesForPage as $lockTableForPage) {
 							$extraRows = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', $lockTableForPage, 'pid='.$uid);
-							foreach ($extraRows as $extraRow) {
-								$tmpRow = array('record_uid' => $extraRow['uid'], 'record_table' => $lockTableForPage, 'real_pid' => $extraRow['pid'], 'tstamp' => $row['tstamp'], 'username' => $row['username'], 'userid' => $row['userid']);
-								$tmpMsg = $this->getLockMessage($tmpRow, 'LLL:EXT:lockadmin/locallang.xml:lockedRecord_pageBeingEdited');
-								$tmpRow['msg'] = $tmpMsg;
-								$useIdx = md5(serialize($tmpRow));
-								$SV_LOCKED_RECORDS[$explicit.$lockTableForPage][$extraRow['uid']][$useIdx] = $tmpRow;
-								$extraLocked[$useIdx] = $tmpRow;
+							if (is_array($extraRows)) {
+								foreach ($extraRows as $extraRow) {
+									$tmpRow = array('record_uid' => $extraRow['uid'], 'record_table' => $lockTableForPage, 'real_pid' => $extraRow['pid'], 'tstamp' => $row['tstamp'], 'username' => $row['username'], 'userid' => $row['userid']);
+									$tmpMsg = $this->getLockMessage($tmpRow, 'LLL:EXT:lockadmin/locallang.xml:lockedRecord_pageBeingEdited');
+									$tmpRow['msg'] = $tmpMsg;
+									$useIdx = md5(serialize($tmpRow));
+									$SV_LOCKED_RECORDS[$explicit.$lockTableForPage][$extraRow['uid']][$useIdx] = $tmpRow;
+									$extraLocked[$useIdx] = $tmpRow;
+								}
 							}
 						}
 					}
